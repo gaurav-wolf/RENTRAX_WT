@@ -1,0 +1,178 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RentRax - Login</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="../shared-shell.css">
+</head>
+<body class="flex items-center justify-center min-h-screen p-4">
+
+  <div class="w-full max-w-5xl min-h-[580px] border-2 border-purple-600 rounded-2xl bg-white/75 backdrop-blur-md shadow-2xl flex flex-col overflow-hidden my-auto">
+    <main class="flex-1 grid grid-cols-1 md:grid-cols-2 items-center p-8 md:p-14 gap-8">
+      
+      <!-- Left Section: Wireframe Fig. 1.1 with Company Logo -->
+      <section class="flex flex-col items-center text-center">
+        <img src="../logo.png" alt="RentRax Logo" class="w-44 h-44 md:w-52 md:h-52 rounded-full shadow-2xl object-cover mb-5 border-4 border-purple-200 bg-white">
+        <h1 class="text-3xl md:text-4xl font-extrabold text-[#33234E] tracking-wider uppercase mb-2">RentRax</h1>
+        <p class="text-base md:text-lg text-gray-600 font-medium leading-relaxed m-0">Rent anything you want,<br>anytime you want.</p>
+      </section>
+
+      <!-- Right Section: Login Card Fig. 1.1 -->
+      <section class="w-full max-w-sm mx-auto">
+        <div class="bg-white/95 rounded-2xl border border-purple-200 p-7 md:p-8 shadow-xl">
+          <div class="flex items-center justify-center gap-2 mb-4">
+            <img src="../logo.png" alt="RentRax Logo" class="w-9 h-9 rounded-full object-cover shadow-sm">
+            <h2 class="text-2xl font-bold text-[#33234E] m-0">Login</h2>
+          </div>
+          <form id="loginForm" action="dashboard.html" method="get" novalidate>
+            <div class="relative mb-4">
+              <i class="bi bi-person absolute left-3.5 top-1/2 -translate-y-1/2 text-gray-400 text-lg"></i>
+              <input type="text" id="username" class="w-full h-11 pl-11 pr-4 rounded-lg border border-gray-300 text-sm focus:border-purple-600 focus:ring-2 focus:ring-purple-200 outline-none transition" placeholder="Username" value="User" required autocomplete="username">
+            </div>
+
+            <div class="relative mb-3">
+              <i class="bi bi-lock absolute left-3.5 top-1/2 -translate-y-1/2 text-gray-400 text-lg"></i>
+              <input type="password" id="password" class="w-full h-11 pl-11 pr-4 rounded-lg border border-gray-300 text-sm focus:border-purple-600 focus:ring-2 focus:ring-purple-200 outline-none transition" placeholder="Password" value="password123" required autocomplete="current-password">
+            </div>
+
+            <label class="flex items-center gap-2 mb-5 text-sm text-gray-600 cursor-pointer select-none">
+              <input type="checkbox" id="rememberMe" class="w-4 h-4 rounded text-purple-600 accent-purple-600" checked>
+              <span>Remember me</span>
+            </label>
+
+            <button type="submit" class="btn w-full h-11 bg-[#2D233C] hover:bg-purple-700 text-white font-semibold rounded-lg shadow transition">Login</button>
+
+            <div class="text-center text-sm text-gray-500 mt-4">
+              Don't have an account? <a href="#" id="openSignUp" class="text-purple-700 font-semibold underline">Sign up</a>
+            </div>
+
+            <div class="text-center text-xs text-purple-600 mt-3 pt-3 border-t border-purple-100">
+              Are you an administrator? <a href="../admin/login.html" class="font-semibold underline">Admin Login &rarr;</a>
+            </div>
+            <div class="text-center text-xs text-gray-500 mt-2">
+              <a href="../about/index.html" class="hover:underline text-purple-700">Learn more About RentRax &rarr;</a>
+            </div>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">© 2025 RentRax. All rights reserved.</footer>
+  </div>
+
+  <!-- Sign Up Modal with Company Logo -->
+  <div class="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 hidden items-center justify-center p-4" id="signUpModal" role="dialog" aria-modal="true">
+    <div class="w-full max-w-sm bg-white rounded-2xl border border-purple-200 p-6 shadow-2xl relative">
+      <button class="absolute top-3 right-4 text-2xl text-gray-400 hover:text-gray-700" id="closeSignUp">&times;</button>
+      <div class="flex items-center gap-2.5 mb-4">
+        <img src="../logo.png" alt="RentRax Logo" class="w-8 h-8 rounded-full object-cover">
+        <h3 class="text-xl font-bold text-[#33234E] m-0">Create an Account</h3>
+      </div>
+      <form id="signUpForm" class="flex flex-col gap-3" novalidate>
+        <div class="relative">
+          <i class="bi bi-person absolute left-3 top-1/2 -translate-y-1/2 text-gray-400"></i>
+          <input type="text" id="signupName" class="w-full h-10 pl-9 pr-3 rounded-lg border border-gray-300 text-sm outline-none focus:border-purple-600" placeholder="Full Name" required>
+        </div>
+        <div class="relative">
+          <i class="bi bi-envelope absolute left-3 top-1/2 -translate-y-1/2 text-gray-400"></i>
+          <input type="email" id="signupEmail" class="w-full h-10 pl-9 pr-3 rounded-lg border border-gray-300 text-sm outline-none focus:border-purple-600" placeholder="Email Address" required>
+        </div>
+        <div class="relative">
+          <i class="bi bi-lock absolute left-3 top-1/2 -translate-y-1/2 text-gray-400"></i>
+          <input type="password" id="signupPassword" class="w-full h-10 pl-9 pr-3 rounded-lg border border-gray-300 text-sm outline-none focus:border-purple-600" placeholder="Create Password" required>
+        </div>
+        <button type="submit" class="btn h-10 bg-purple-600 hover:bg-purple-700 text-white font-semibold rounded-lg mt-2">Sign Up</button>
+      </form>
+    </div>
+  </div>
+
+  <script>
+    const loginForm = document.getElementById('loginForm');
+    const signUpForm = document.getElementById('signUpForm');
+    const modal = document.getElementById('signUpModal');
+
+    function validateClientLogin(event) {
+      event.preventDefault();
+
+      const usernameInput = document.getElementById('username');
+      const passwordInput = document.getElementById('password');
+      const username = usernameInput.value.trim();
+      const password = passwordInput.value;
+
+      if (!username) {
+        alert('Please enter your username.');
+        usernameInput.focus();
+        return;
+      }
+      if (!password) {
+        alert('Please enter your password.');
+        passwordInput.focus();
+        return;
+      }
+      if (username !== 'User' || password !== 'password123') {
+        alert('Invalid demo login. Check the username and password.');
+        return;
+      }
+
+      localStorage.setItem('rental_user', username);
+      alert('Login successful.');
+      window.location.href = 'dashboard.html';
+    }
+
+    function validateSignUp(event) {
+      event.preventDefault();
+
+      const nameInput = document.getElementById('signupName');
+      const emailInput = document.getElementById('signupEmail');
+      const passwordInput = document.getElementById('signupPassword');
+      const name = nameInput.value.trim();
+      const email = emailInput.value.trim();
+      const password = passwordInput.value;
+
+      if (name.length < 2) {
+        alert('Enter a name with at least 2 characters.');
+        nameInput.focus();
+        return;
+      }
+      if (!email || !emailInput.checkValidity()) {
+        alert('Please enter a valid email address.');
+        emailInput.focus();
+        return;
+      }
+      if (password.length < 8) {
+        alert('Password must be at least 8 characters.');
+        passwordInput.focus();
+        return;
+      }
+      if (!confirm('Create this account?')) return;
+
+      localStorage.setItem('rental_user', name);
+      alert('Account registered successfully.');
+      window.location.href = 'dashboard.html';
+    }
+
+    loginForm.addEventListener('submit', validateClientLogin);
+    signUpForm.addEventListener('submit', validateSignUp);
+
+    document.getElementById('openSignUp').addEventListener('click', (event) => {
+      event.preventDefault();
+      modal.classList.remove('hidden');
+      modal.classList.add('flex');
+    });
+    document.getElementById('closeSignUp').addEventListener('click', () => {
+      modal.classList.add('hidden');
+      modal.classList.remove('flex');
+    });
+    modal.addEventListener('click', (event) => {
+      if (event.target === modal) {
+        modal.classList.add('hidden');
+        modal.classList.remove('flex');
+      }
+    });
+  </script>
+</body>
+</html>

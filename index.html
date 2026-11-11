@@ -1,0 +1,384 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>RentRax - Rentals for Everything | Smart Sharing Marketplace</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="shared-shell.css">
+</head>
+<body class="p-3 md:p-6 flex items-center justify-center min-h-screen">
+
+  <div class="w-full max-w-6xl border-2 border-purple-600 rounded-3xl bg-white/85 backdrop-blur-md shadow-2xl overflow-hidden my-4 flex flex-col">
+    
+    <!-- Top Navigation Bar -->
+    <header class="p-4 px-6 md:px-8 border-b border-[#D6CBE7] bg-white/95 flex flex-wrap items-center justify-between gap-4 sticky top-0 z-30">
+      <a href="index.html" class="flex items-center gap-3 text-decoration-none">
+        <img src="logo.png" alt="RentRax Logo" class="w-10 h-10 rounded-full object-cover shadow-sm border border-purple-200">
+        <div>
+          <span class="text-xl font-extrabold text-[#33234E] tracking-tight block leading-tight">RentRax</span>
+          <span class="text-[11px] font-semibold text-purple-700 tracking-wide uppercase">Rentals for Everything</span>
+        </div>
+      </a>
+
+      <!-- Quick Nav Links -->
+      <nav class="hidden lg:flex items-center gap-6 text-sm font-semibold text-gray-600">
+        <a href="#project-idea" class="hover:text-purple-700 transition">The Idea</a>
+        <a href="#why-rent" class="hover:text-purple-700 transition">Why Rent?</a>
+        <a href="#use-cases" class="hover:text-purple-700 transition">Who It's For</a>
+        <a href="#how-it-works" class="hover:text-purple-700 transition">How It Works</a>
+        <a href="about/index.html" class="hover:text-purple-700 transition">About Story</a>
+      </nav>
+
+      <!-- Action Portals -->
+      <div class="flex items-center gap-2.5">
+        <a href="client/login.html" class="btn btn-sm bg-purple-600 hover:bg-purple-700 text-white rounded-xl px-4 py-2 text-xs font-bold shadow-sm transition">
+          <i class="bi bi-person-fill me-1"></i> Client Portal
+        </a>
+        <a href="admin/login.html" class="btn btn-sm bg-[#2D233C] hover:bg-purple-900 text-white rounded-xl px-4 py-2 text-xs font-bold shadow-sm transition">
+          <i class="bi bi-shield-lock-fill me-1"></i> Admin Desk
+        </a>
+      </div>
+    </header>
+
+    <!-- Main Content Area -->
+    <main class="p-6 md:p-10 lg:p-12 flex flex-col gap-14">
+      
+      <!-- Hero Section -->
+      <section class="text-center flex flex-col items-center pt-2">
+        <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-purple-100 text-purple-800 text-xs font-bold uppercase tracking-wider mb-5">
+          <i class="bi bi-arrow-repeat text-sm"></i> Smart Sharing Economy Platform
+        </div>
+        <img src="logo.png" alt="RentRax Logo" class="w-32 h-32 md:w-40 md:h-40 rounded-full shadow-2xl object-cover mb-5 border-4 border-purple-200 bg-white">
+        <h1 class="text-3xl md:text-5xl lg:text-6xl font-black text-[#33234E] tracking-tight m-0 max-w-4xl leading-tight">
+          Rent Anything You Want,<br>Anytime You Want.
+        </h1>
+        <p class="text-base md:text-xl text-gray-600 font-medium max-w-2xl mt-4 leading-relaxed">
+          The all-in-one marketplace replacing costly ownership with flexible, affordable rentals. Access pro cameras, vehicles, tools, and electronics without the burden of buying.
+        </p>
+
+        <div class="flex flex-wrap items-center justify-center gap-3.5 mt-8">
+          <a href="client/login.html" class="btn bg-purple-600 hover:bg-purple-700 text-white font-bold px-7 py-3 rounded-xl shadow-lg transition text-sm">
+            <i class="bi bi-box-arrow-in-right me-1.5"></i> Start Renting as User &rarr;
+          </a>
+          <a href="#project-idea" class="btn bg-purple-50 hover:bg-purple-100 text-purple-700 border border-purple-200 font-bold px-6 py-3 rounded-xl transition text-sm">
+            <i class="bi bi-lightbulb me-1.5"></i> Read The Project Idea
+          </a>
+          <a href="admin/login.html" class="btn bg-white hover:bg-gray-50 text-gray-700 border border-gray-300 font-bold px-6 py-3 rounded-xl transition text-sm">
+            <i class="bi bi-shield-lock me-1.5"></i> Admin Management
+          </a>
+        </div>
+      </section>
+
+      <!-- The Project Idea & Problem Solved (#project-idea) -->
+      <section id="project-idea" class="bg-white/90 rounded-3xl border border-purple-200 p-6 md:p-10 shadow-sm flex flex-col gap-8 scroll-mt-24">
+        <div class="text-center max-w-3xl mx-auto">
+          <span class="text-xs font-extrabold text-purple-700 uppercase tracking-widest bg-purple-50 px-3 py-1 rounded-full">The Core Idea</span>
+          <h2 class="text-2xl md:text-4xl font-extrabold text-[#33234E] mt-3 m-0">Why Was RentRax Conceived?</h2>
+          <p class="text-sm md:text-base text-gray-600 mt-2">
+            RentRax addresses a modern economic paradox: the excessive cost of owning items you only need temporarily.
+          </p>
+        </div>
+
+        <!-- Problem vs Solution Comparison Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 items-stretch">
+          
+          <!-- The Problem -->
+          <div class="bg-red-50/70 border border-red-200 rounded-2xl p-6 flex flex-col gap-4">
+            <div class="flex items-center gap-3 text-red-700 font-bold text-lg">
+              <span class="w-10 h-10 rounded-xl bg-red-100 flex items-center justify-center text-xl">
+                <i class="bi bi-x-circle-fill"></i>
+              </span>
+              <h3>The Ownership Problem</h3>
+            </div>
+            <ul class="text-sm text-gray-700 space-y-3 p-0 m-0 list-none">
+              <li class="flex items-start gap-2.5">
+                <i class="bi bi-dash-circle text-red-500 mt-0.5 flex-shrink-0"></i>
+                <span><strong>High Capital Lock-up:</strong> Buying a $1,500 DSLR camera, a $600 power tool set, or a mountain bike requires steep upfront spending.</span>
+              </li>
+              <li class="flex items-start gap-2.5">
+                <i class="bi bi-dash-circle text-red-500 mt-0.5 flex-shrink-0"></i>
+                <span><strong>Underutilized Idle Assets:</strong> Occasional-use items spend over 90% of their life gathering dust in closets, basements, or garages.</span>
+              </li>
+              <li class="flex items-start gap-2.5">
+                <i class="bi bi-dash-circle text-red-500 mt-0.5 flex-shrink-0"></i>
+                <span><strong>Rapid Depreciation &amp; Waste:</strong> Technology becomes obsolete quickly, leading to electronic clutter and landfill waste.</span>
+              </li>
+            </ul>
+          </div>
+
+          <!-- The RentRax Solution -->
+          <div class="bg-emerald-50/70 border border-emerald-200 rounded-2xl p-6 flex flex-col gap-4">
+            <div class="flex items-center gap-3 text-emerald-800 font-bold text-lg">
+              <span class="w-10 h-10 rounded-xl bg-emerald-100 flex items-center justify-center text-xl">
+                <i class="bi bi-check-circle-fill"></i>
+              </span>
+              <h3>The RentRax Solution</h3>
+            </div>
+            <ul class="text-sm text-gray-700 space-y-3 p-0 m-0 list-none">
+              <li class="flex items-start gap-2.5">
+                <i class="bi bi-check-circle text-emerald-600 mt-0.5 flex-shrink-0"></i>
+                <span><strong>Pay Only for What You Use:</strong> Rent high-end gear at a fraction of retail price for the exact duration of your project or trip.</span>
+              </li>
+              <li class="flex items-start gap-2.5">
+                <i class="bi bi-check-circle text-emerald-600 mt-0.5 flex-shrink-0"></i>
+                <span><strong>Zero Maintenance &amp; Storage Headache:</strong> Pick up clean, verified gear when you need it and return it once finished.</span>
+              </li>
+              <li class="flex items-start gap-2.5">
+                <i class="bi bi-check-circle text-emerald-600 mt-0.5 flex-shrink-0"></i>
+                <span><strong>Circular Sharing Economy:</strong> Maximizes the useful lifecycle of physical goods, fostering sustainable, eco-friendly community consumption.</span>
+              </li>
+            </ul>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- 4 Pillars of the RentRax Platform (#why-rent) -->
+      <section id="why-rent" class="flex flex-col gap-8 scroll-mt-24">
+        <div class="text-center max-w-2xl mx-auto">
+          <span class="text-xs font-extrabold text-purple-700 uppercase tracking-widest bg-purple-50 px-3 py-1 rounded-full">Value Proposition</span>
+          <h2 class="text-2xl md:text-3xl font-extrabold text-[#33234E] mt-3 m-0">Four Pillars of the Platform</h2>
+          <p class="text-sm text-gray-600 mt-2">Built from the ground up for convenience, transparency, and trust.</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          
+          <div class="bg-white/95 rounded-2xl border border-purple-200 p-6 shadow-sm flex flex-col gap-3">
+            <div class="w-12 h-12 rounded-xl bg-purple-100 text-purple-700 flex items-center justify-center text-2xl font-bold">
+              <i class="bi bi-camera"></i>
+            </div>
+            <h3 class="text-lg font-bold text-[#33234E] m-0">Multi-Category Catalog</h3>
+            <p class="text-xs text-gray-600 leading-relaxed m-0">
+              One platform for everything: Electronics, DSLR cameras, transport bikes, camping equipment, and power tools.
+            </p>
+          </div>
+
+          <div class="bg-white/95 rounded-2xl border border-purple-200 p-6 shadow-sm flex flex-col gap-3">
+            <div class="w-12 h-12 rounded-xl bg-purple-100 text-purple-700 flex items-center justify-center text-2xl font-bold">
+              <i class="bi bi-calculator"></i>
+            </div>
+            <h3 class="text-lg font-bold text-[#33234E] m-0">Dynamic Pricing</h3>
+            <p class="text-xs text-gray-600 leading-relaxed m-0">
+              Transparent daily rental calculations with automatic date math and clear refundable security deposits.
+            </p>
+          </div>
+
+          <div class="bg-white/95 rounded-2xl border border-purple-200 p-6 shadow-sm flex flex-col gap-3">
+            <div class="w-12 h-12 rounded-xl bg-purple-100 text-purple-700 flex items-center justify-center text-2xl font-bold">
+              <i class="bi bi-gift-fill"></i>
+            </div>
+            <h3 class="text-lg font-bold text-[#33234E] m-0">Renter Loyalty Credits</h3>
+            <p class="text-xs text-gray-600 leading-relaxed m-0">
+              Earn loyalty points on every booking dollar. Redeem 100 points for instant $5 rental discounts on future orders.
+            </p>
+          </div>
+
+          <div class="bg-white/95 rounded-2xl border border-purple-200 p-6 shadow-sm flex flex-col gap-3">
+            <div class="w-12 h-12 rounded-xl bg-purple-100 text-purple-700 flex items-center justify-center text-2xl font-bold">
+              <i class="bi bi-shield-check"></i>
+            </div>
+            <h3 class="text-lg font-bold text-[#33234E] m-0">Admin Trust Desk</h3>
+            <p class="text-xs text-gray-600 leading-relaxed m-0">
+              Direct verification pipeline ensuring all item requests are inspected, approved, and logged before checkout.
+            </p>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- Real-World Use Cases (#use-cases) -->
+      <section id="use-cases" class="bg-white/85 rounded-3xl border border-purple-200 p-6 md:p-10 shadow-sm flex flex-col gap-8 scroll-mt-24">
+        <div class="text-center max-w-2xl mx-auto">
+          <span class="text-xs font-extrabold text-purple-700 uppercase tracking-widest bg-purple-50 px-3 py-1 rounded-full">Target Audience</span>
+          <h2 class="text-2xl md:text-3xl font-extrabold text-[#33234E] mt-3 m-0">Who Benefits from RentRax?</h2>
+          <p class="text-sm text-gray-600 mt-2">Tailored for individuals and groups with flexible temporary needs.</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
+          
+          <div class="border border-purple-100 rounded-2xl p-5 bg-purple-50/40 flex flex-col gap-2.5">
+            <div class="text-purple-700 text-2xl font-bold"><i class="bi bi-mortarboard-fill"></i></div>
+            <h4 class="text-base font-bold text-[#33234E] m-0">Students &amp; Academics</h4>
+            <p class="text-xs text-gray-600 m-0 leading-relaxed">
+              Rent high-performance laptops, cameras, or audio recording gear for term presentations and college media projects without big loans.
+            </p>
+          </div>
+
+          <div class="border border-purple-100 rounded-2xl p-5 bg-purple-50/40 flex flex-col gap-2.5">
+            <div class="text-purple-700 text-2xl font-bold"><i class="bi bi-camera-reels-fill"></i></div>
+            <h4 class="text-base font-bold text-[#33234E] m-0">Creators &amp; Freelancers</h4>
+            <p class="text-xs text-gray-600 m-0 leading-relaxed">
+              Equip yourself with prime lenses, drones, and stabilizers for wedding shoots or commercial gigs, billing equipment right to the project.
+            </p>
+          </div>
+
+          <div class="border border-purple-100 rounded-2xl p-5 bg-purple-50/40 flex flex-col gap-2.5">
+            <div class="text-purple-700 text-2xl font-bold"><i class="bi bi-tools"></i></div>
+            <h4 class="text-base font-bold text-[#33234E] m-0">DIY Home Renovators</h4>
+            <p class="text-xs text-gray-600 m-0 leading-relaxed">
+              Handle weekend home repairs, garden landscaping, and woodworking with commercial-grade saws and pressure washers for just 1-2 days.
+            </p>
+          </div>
+
+          <div class="border border-purple-100 rounded-2xl p-5 bg-purple-50/40 flex flex-col gap-2.5">
+            <div class="text-purple-700 text-2xl font-bold"><i class="bi bi-compass-fill"></i></div>
+            <h4 class="text-base font-bold text-[#33234E] m-0">Travelers &amp; Explorers</h4>
+            <p class="text-xs text-gray-600 m-0 leading-relaxed">
+              Pack light and rent mountain bikes, action cameras, camping tents, and sleeping bags directly for your weekend escape.
+            </p>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- How It Works (Simple 4-Step Rental Cycle) (#how-it-works) -->
+      <section id="how-it-works" class="bg-white/90 rounded-3xl border border-purple-200 p-6 md:p-10 shadow-sm flex flex-col gap-8 scroll-mt-24">
+        <div class="text-center max-w-2xl mx-auto">
+          <span class="text-xs font-extrabold text-purple-700 uppercase tracking-widest bg-purple-50 px-3 py-1 rounded-full">Simple Workflow</span>
+          <h2 class="text-2xl md:text-3xl font-extrabold text-[#33234E] mt-3 m-0">How The Rental Journey Works</h2>
+          <p class="text-sm text-gray-600 mt-2">From discovery to return in four intuitive steps.</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+          <div class="flex flex-col items-center text-center p-5 bg-purple-50/50 rounded-2xl border border-purple-100">
+            <span class="w-10 h-10 rounded-full bg-purple-600 text-white font-black flex items-center justify-center text-sm mb-3">1</span>
+            <h4 class="text-sm font-bold text-[#33234E] mb-1">Browse Catalog</h4>
+            <p class="text-xs text-gray-600 m-0">Search items across categories with live availability status and clear daily rates.</p>
+          </div>
+
+          <div class="flex flex-col items-center text-center p-5 bg-purple-50/50 rounded-2xl border border-purple-100">
+            <span class="w-10 h-10 rounded-full bg-purple-600 text-white font-black flex items-center justify-center text-sm mb-3">2</span>
+            <h4 class="text-sm font-bold text-[#33234E] mb-1">Set Dates &amp; Book</h4>
+            <p class="text-xs text-gray-600 m-0">Select duration; the platform automatically computes days, pricing, and deposit.</p>
+          </div>
+
+          <div class="flex flex-col items-center text-center p-5 bg-purple-50/50 rounded-2xl border border-purple-100">
+            <span class="w-10 h-10 rounded-full bg-purple-600 text-white font-black flex items-center justify-center text-sm mb-3">3</span>
+            <h4 class="text-sm font-bold text-[#33234E] mb-1">Admin Verification</h4>
+            <p class="text-xs text-gray-600 m-0">The administrator reviews your request for fast approval and equipment preparation.</p>
+          </div>
+
+          <div class="flex flex-col items-center text-center p-5 bg-purple-50/50 rounded-2xl border border-purple-100">
+            <span class="w-10 h-10 rounded-full bg-purple-600 text-white font-black flex items-center justify-center text-sm mb-3">4</span>
+            <h4 class="text-sm font-bold text-[#33234E] mb-1">Return &amp; Earn</h4>
+            <p class="text-xs text-gray-600 m-0">Complete your project, return the gear safely, and earn loyalty rewards for next time.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Portal Entry Hub Cards -->
+      <section class="flex flex-col gap-6">
+        <div class="text-center max-w-2xl mx-auto">
+          <span class="text-xs font-extrabold text-purple-700 uppercase tracking-widest bg-purple-50 px-3 py-1 rounded-full">Explore The App</span>
+          <h2 class="text-2xl md:text-3xl font-extrabold text-[#33234E] mt-3 m-0">Choose Your Entry Portal</h2>
+          <p class="text-sm text-gray-600 mt-2">Test both user and administrator workflows directly.</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          
+          <!-- Client Card -->
+          <div class="bg-white/95 rounded-2xl border-2 border-purple-300 p-6 shadow-md hover:shadow-xl transition-all flex flex-col justify-between">
+            <div>
+              <div class="w-12 h-12 rounded-xl bg-purple-100 text-purple-700 flex items-center justify-center text-2xl mb-4 font-bold">
+                <i class="bi bi-person-fill"></i>
+              </div>
+              <h3 class="text-xl font-bold text-[#33234E] mb-2">Renter Client Portal</h3>
+              <p class="text-xs text-gray-600 leading-relaxed mb-4">
+                The customer-facing application: browse items, submit rental requests, check active bookings, track history, and redeem reward vouchers.
+              </p>
+            </div>
+            <div class="flex flex-col gap-2 pt-3 border-t border-purple-100">
+              <a href="client/login.html" class="btn w-full bg-purple-600 hover:bg-purple-700 text-white font-bold py-2 rounded-xl text-xs shadow transition">
+                Open Client Login &rarr;
+              </a>
+              <a href="client/dashboard.html" class="btn w-full btn-outline-secondary hover:!bg-purple-50 hover:!text-purple-700 !border-purple-200 !text-purple-700 py-1.5 rounded-xl text-xs font-semibold transition">
+                Direct to User Dashboard
+              </a>
+            </div>
+          </div>
+
+          <!-- Admin Card -->
+          <div class="bg-white/95 rounded-2xl border-2 border-[#33234E] p-6 shadow-md hover:shadow-xl transition-all flex flex-col justify-between">
+            <div>
+              <div class="w-12 h-12 rounded-xl bg-purple-100 text-[#33234E] flex items-center justify-center text-2xl mb-4 font-bold">
+                <i class="bi bi-shield-lock-fill"></i>
+              </div>
+              <h3 class="text-xl font-bold text-[#33234E] mb-2">Operations Admin Portal</h3>
+              <p class="text-xs text-gray-600 leading-relaxed mb-4">
+                The back-office desk: review incoming requests with one-click approve/reject actions, track daily issue/return logs, and audit users.
+              </p>
+            </div>
+            <div class="flex flex-col gap-2 pt-3 border-t border-purple-100">
+              <a href="admin/login.html" class="btn w-full bg-[#2D233C] hover:bg-purple-900 text-white font-bold py-2 rounded-xl text-xs shadow transition">
+                Open Admin Login &rarr;
+              </a>
+              <a href="admin/dashboard.html" class="btn w-full btn-outline-secondary hover:!bg-purple-50 hover:!text-purple-700 !border-purple-200 !text-purple-700 py-1.5 rounded-xl text-xs font-semibold transition">
+                Direct to Admin Dashboard
+              </a>
+            </div>
+          </div>
+
+          <!-- About Card -->
+          <div class="bg-white/95 rounded-2xl border-2 border-purple-200 p-6 shadow-md hover:shadow-xl transition-all flex flex-col justify-between">
+            <div>
+              <div class="w-12 h-12 rounded-xl bg-purple-100 text-purple-700 flex items-center justify-center text-2xl mb-4 font-bold">
+                <i class="bi bi-info-circle-fill"></i>
+              </div>
+              <h3 class="text-xl font-bold text-[#33234E] mb-2">About &amp; Mission Story</h3>
+              <p class="text-xs text-gray-600 leading-relaxed mb-4">
+                Detailed story of the RentRax brand, sharing economy values, sustainability impact, and full module walkthroughs.
+              </p>
+            </div>
+            <div class="flex flex-col gap-2 pt-3 border-t border-purple-100">
+              <a href="about/index.html" class="btn w-full bg-purple-100 hover:bg-purple-200 text-purple-800 font-bold py-2 rounded-xl text-xs transition">
+                Read About RentRax &rarr;
+              </a>
+              <a href="#how-it-works" class="btn w-full btn-outline-secondary hover:!bg-gray-100 !border-gray-200 !text-gray-600 py-1.5 rounded-xl text-xs font-semibold transition">
+                View Rental Workflow
+              </a>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- Friendly Demo Credentials Box -->
+      <section class="bg-purple-50/90 border border-purple-200 rounded-2xl p-4 md:p-5 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-gray-700">
+        <div class="flex items-center gap-3">
+          <div class="w-8 h-8 rounded-full bg-purple-600 text-white flex items-center justify-center flex-shrink-0">
+            <i class="bi bi-key-fill text-sm"></i>
+          </div>
+          <div>
+            <strong class="text-gray-900">Demo Login Accounts:</strong>
+            <span class="ms-2">Client: <code>User</code> / <code>password123</code></span>
+            <span class="ms-3">Admin: <code>admin</code> / <code>admin123</code></span>
+          </div>
+        </div>
+        <div class="flex items-center gap-2 text-purple-700 font-semibold">
+          <i class="bi bi-shield-check text-base"></i>
+          <span>Ready for instant evaluation</span>
+        </div>
+      </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="p-6 px-8 border-t border-[#D6CBE7] bg-white/95 text-xs text-gray-500 flex flex-col sm:flex-row items-center justify-between gap-4">
+      <div class="flex items-center gap-2.5">
+        <img src="logo.png" alt="RentRax Logo" class="w-6 h-6 rounded-full object-cover">
+        <span>© 2025 RentRax. All rights reserved. "Rentals for Everything".</span>
+      </div>
+      <div class="flex items-center gap-4 font-medium">
+        <a href="client/login.html" class="hover:underline text-purple-700">Client Portal</a>
+        <a href="admin/login.html" class="hover:underline text-purple-700">Admin Desk</a>
+        <a href="about/index.html" class="hover:underline text-purple-700">About Story</a>
+      </div>
+    </footer>
+
+  </div>
+
+</body>
+</html>

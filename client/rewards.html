@@ -1,0 +1,136 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Rewards &amp; Payment History | RentRax</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="../shared-shell.css">
+</head>
+<body>
+  <div class="frame">
+    <input class="toggle-hidden" type="checkbox" id="menu-toggle" aria-label="Toggle sidebar">
+    
+    <!-- Topbar Fig 1.5 -->
+    <header class="topbar flex items-center justify-between">
+      <div class="flex items-center gap-3">
+        <label class="menu" for="menu-toggle" aria-label="Toggle navigation"><span></span><span></span><span></span></label>
+        <a class="brand" href="dashboard.html">
+          <img src="../logo.png" alt="RentRax Logo">
+          <span>RentRax</span>
+        </a>
+      </div>
+      <div class="flex items-center">
+        <details class="user-menu">
+          <summary class="flex items-center gap-2">
+            <span class="avatar">
+              <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=100&q=80" alt="User Avatar">
+            </span>
+            <span class="user-name">User</span>
+            <span class="chevron">⌄</span>
+          </summary>
+          <div class="dropdown"><a href="login.html">Log out</a></div>
+        </details>
+      </div>
+    </header>
+
+    <div class="layout">
+      <!-- Sidebar -->
+      <aside class="sidebar">
+        <nav class="flex flex-col gap-1" aria-label="Main navigation">
+          <a class="nav-link" href="dashboard.html"><span class="nav-icon"><i class="bi bi-grid-1x2"></i></span>Dashboard</a>
+          <a class="nav-link" href="profile.html"><span class="nav-icon"><i class="bi bi-person"></i></span>Profile</a>
+          <a class="nav-link" href="order-history.html"><span class="nav-icon"><i class="bi bi-receipt"></i></span>Order History</a>
+          <a class="nav-link" href="order-history.html#rentals"><span class="nav-icon"><i class="bi bi-clock-history"></i></span>Rent History</a>
+          <a class="nav-link active" href="rewards.html"><span class="nav-icon"><i class="bi bi-star"></i></span>Rewards &amp; Payments</a>
+          <a class="nav-link" href="items.html"><span class="nav-icon"><i class="bi bi-box-seam"></i></span>Item List</a>
+          <a class="nav-link" href="../about/index.html"><span class="nav-icon"><i class="bi bi-info-circle"></i></span>About Us</a>
+          <a class="nav-link" href="login.html"><span class="nav-icon"><i class="bi bi-box-arrow-right"></i></span>Logout</a>
+        </nav>
+      </aside>
+
+      <!-- Main Content Fig 1.5 -->
+      <main class="p-4 md:p-6 min-w-0">
+        <div class="mb-5">
+          <span class="text-xs font-bold tracking-wider text-purple-700 uppercase">Loyalty &amp; Transactions</span>
+          <h1 class="text-2xl font-bold text-[#33234E] m-0">Rewards &amp; Payment History</h1>
+          <p class="text-sm text-gray-500 m-0">Track credit balance, points earned, and past transaction receipts.</p>
+        </div>
+
+        <!-- 2 Summary Cards Fig 1.5 -->
+        <section class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+          <div class="bg-white/85 rounded-xl border border-[#D6CBE7] p-5 shadow-sm flex items-center justify-between">
+            <div>
+              <span class="block text-xs text-gray-500 mb-1">Reward Points</span>
+              <strong class="text-3xl font-extrabold text-[#6D28D9]">120</strong>
+              <p class="text-xs text-gray-400 mt-2 m-0">Keep renting to earn more!</p>
+            </div>
+            <div class="w-14 h-14 rounded-full bg-amber-50 text-amber-500 flex items-center justify-center">
+              <i class="bi bi-star-fill text-3xl"></i>
+            </div>
+          </div>
+
+          <div class="bg-white/85 rounded-xl border border-[#D6CBE7] p-5 shadow-sm flex items-center justify-between">
+            <div>
+              <span class="block text-xs text-gray-500 mb-1">Available Balance</span>
+              <strong class="text-3xl font-extrabold text-[#6D28D9]">$30.00</strong>
+              <p class="text-xs text-gray-400 mt-2 m-0">Total spent so far: $150</p>
+            </div>
+            <div class="w-14 h-14 rounded-full bg-purple-50 text-purple-600 flex items-center justify-center">
+              <i class="bi bi-wallet2 text-3xl"></i>
+            </div>
+          </div>
+        </section>
+
+        <!-- Payment History Table Fig 1.5 -->
+        <section class="rounded-xl border border-[#D6CBE7] bg-white/85 shadow-sm overflow-hidden" aria-labelledby="paymentsHeading">
+          <div class="p-4 px-5 border-b border-purple-100 bg-white/70">
+            <h2 class="text-base font-bold text-[#33234E] m-0" id="paymentsHeading">Payment History</h2>
+          </div>
+
+          <div class="overflow-x-auto">
+            <table class="table table-hover align-middle m-0 text-sm">
+              <thead class="bg-purple-50 text-xs text-purple-900 uppercase tracking-wider">
+                <tr>
+                  <th class="py-3 px-5">Payment ID</th>
+                  <th class="py-3 px-5">Date</th>
+                  <th class="py-3 px-5">Amount</th>
+                  <th class="py-3 px-5">Method</th>
+                  <th class="py-3 px-5">Status</th>
+                </tr>
+              </thead>
+              <tbody class="divide-y divide-purple-50">
+                <tr>
+                  <td class="py-3 px-5 font-bold text-purple-700">#PAY101</td>
+                  <td class="py-3 px-5 text-gray-600">10 May 2025</td>
+                  <td class="py-3 px-5 font-bold text-gray-800">$40</td>
+                  <td class="py-3 px-5 text-gray-700">Card</td>
+                  <td class="py-3 px-5"><span class="badge bg-emerald-100 text-emerald-800 font-semibold px-2.5 py-1 rounded-full text-xs">Success</span></td>
+                </tr>
+                <tr>
+                  <td class="py-3 px-5 font-bold text-purple-700">#PAY102</td>
+                  <td class="py-3 px-5 text-gray-600">12 May 2025</td>
+                  <td class="py-3 px-5 font-bold text-gray-800">$25</td>
+                  <td class="py-3 px-5 text-gray-700">UPI</td>
+                  <td class="py-3 px-5"><span class="badge bg-emerald-100 text-emerald-800 font-semibold px-2.5 py-1 rounded-full text-xs">Success</span></td>
+                </tr>
+                <tr>
+                  <td class="py-3 px-5 font-bold text-purple-700">#PAY103</td>
+                  <td class="py-3 px-5 text-gray-600">15 May 2025</td>
+                  <td class="py-3 px-5 font-bold text-gray-800">$60</td>
+                  <td class="py-3 px-5 text-gray-700">Card</td>
+                  <td class="py-3 px-5"><span class="badge bg-emerald-100 text-emerald-800 font-semibold px-2.5 py-1 rounded-full text-xs">Success</span></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <footer class="footer">© 2025 RentRax. All rights reserved.</footer>
+  </div>
+</body>
+</html>

@@ -1,0 +1,211 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Users List | RentRax Admin</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="../shared-shell.css">
+</head>
+<body>
+  <div class="frame">
+    <input class="toggle-hidden" type="checkbox" id="menu-toggle" aria-label="Toggle sidebar">
+    
+    <!-- Topbar Fig 2.5 -->
+    <header class="topbar flex items-center justify-between">
+      <div class="flex items-center gap-3">
+        <label class="menu" for="menu-toggle" aria-label="Toggle navigation"><span></span><span></span><span></span></label>
+        <a class="brand" href="dashboard.html">
+          <img src="../logo.png" alt="RentRax Logo">
+          <span>RentRax - Admin</span>
+        </a>
+      </div>
+      <div class="flex items-center">
+        <details class="user-menu">
+          <summary class="flex items-center gap-2">
+            <span class="avatar">
+              <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=100&q=80" alt="Admin Avatar">
+            </span>
+            <span class="user-name">Admin</span>
+            <span class="chevron">⌄</span>
+          </summary>
+          <div class="dropdown"><a href="login.html">Log out</a></div>
+        </details>
+      </div>
+    </header>
+
+    <div class="layout">
+      <!-- Admin Sidebar Fig 2.5 -->
+      <aside class="sidebar">
+        <nav class="flex flex-col gap-1" aria-label="Admin navigation">
+          <a class="nav-link" href="dashboard.html">
+            <span class="nav-icon"><i class="bi bi-grid-1x2"></i></span>Dashboard
+          </a>
+          <a class="nav-link" href="daily-records.html">
+            <span class="nav-icon"><i class="bi bi-calendar-check"></i></span>Daily Records
+          </a>
+          <a class="nav-link" href="rent-requests.html">
+            <span class="nav-icon"><i class="bi bi-inbox"></i></span>Rent Requests
+          </a>
+          <a class="nav-link active" href="users-list.html">
+            <span class="nav-icon"><i class="bi bi-people"></i></span>Users List
+          </a>
+          <a class="nav-link" href="login.html">
+            <span class="nav-icon"><i class="bi bi-box-arrow-right"></i></span>Logout
+          </a>
+        </nav>
+      </aside>
+
+      <!-- Main Content Fig 2.5 -->
+      <main class="p-4 md:p-6 min-w-0">
+        <!-- Top bar with Search Fig 2.5 -->
+        <div class="flex flex-wrap items-center justify-between gap-4 mb-6">
+          <h1 class="text-2xl font-bold text-[#33234E] m-0">Users List</h1>
+          <div class="flex items-center gap-2 p-1.5 px-3 bg-white rounded-lg border border-gray-300 shadow-sm w-full max-w-xs">
+            <i class="bi bi-search text-gray-400"></i>
+            <input type="search" id="userSearchInput" placeholder="Search users..." class="border-none outline-none text-gray-700 bg-transparent text-sm w-full">
+          </div>
+        </div>
+
+        <section class="rounded-xl border border-[#D6CBE7] bg-white/85 shadow-sm overflow-hidden" aria-label="Users Directory">
+          <div class="overflow-x-auto">
+            <table class="table table-hover align-middle m-0 text-sm">
+              <thead class="bg-purple-50 text-xs text-purple-900 uppercase tracking-wider">
+                <tr>
+                  <th class="py-3 px-5">User ID</th>
+                  <th class="py-3 px-5">Full Name</th>
+                  <th class="py-3 px-5">Email</th>
+                  <th class="py-3 px-5">Phone</th>
+                  <th class="py-3 px-5">Joined On</th>
+                  <th class="py-3 px-5">Action</th>
+                </tr>
+              </thead>
+              <tbody class="divide-y divide-purple-50" id="usersTableBody">
+                <tr>
+                  <td class="py-3 px-5 font-bold text-purple-700">U001</td>
+                  <td class="py-3 px-5">
+                    <div class="flex items-center gap-2.5">
+                      <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=80&q=80" alt="User One" class="w-7 h-7 rounded-full object-cover">
+                      <span class="font-medium text-gray-800">User One</span>
+                    </div>
+                  </td>
+                  <td class="py-3 px-5 text-gray-600">user1@email.com</td>
+                  <td class="py-3 px-5 text-gray-600">9876543210</td>
+                  <td class="py-3 px-5 text-gray-600">10 May 2025</td>
+                  <td class="py-3 px-5">
+                    <button type="button" class="btn btn-sm btn-outline-primary text-xs !border-purple-300 !text-purple-700 hover:!bg-purple-600 hover:!text-white font-semibold px-3 py-1 rounded" onclick="openUserModal('U001', 'User One', 'user1@email.com', '9876543210', '10 May 2025', 'Active (2 items on rent)', 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=150&q=80')">View</button>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td class="py-3 px-5 font-bold text-purple-700">U002</td>
+                  <td class="py-3 px-5">
+                    <div class="flex items-center gap-2.5">
+                      <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=80&q=80" alt="User Two" class="w-7 h-7 rounded-full object-cover">
+                      <span class="font-medium text-gray-800">User Two</span>
+                    </div>
+                  </td>
+                  <td class="py-3 px-5 text-gray-600">user2@email.com</td>
+                  <td class="py-3 px-5 text-gray-600">9123456780</td>
+                  <td class="py-3 px-5 text-gray-600">12 May 2025</td>
+                  <td class="py-3 px-5">
+                    <button type="button" class="btn btn-sm btn-outline-primary text-xs !border-purple-300 !text-purple-700 hover:!bg-purple-600 hover:!text-white font-semibold px-3 py-1 rounded" onclick="openUserModal('U002', 'User Two', 'user2@email.com', '9123456780', '12 May 2025', 'Active (1 item on rent)', 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=150&q=80')">View</button>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td class="py-3 px-5 font-bold text-purple-700">U003</td>
+                  <td class="py-3 px-5">
+                    <div class="flex items-center gap-2.5">
+                      <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&w=80&q=80" alt="User Three" class="w-7 h-7 rounded-full object-cover">
+                      <span class="font-medium text-gray-800">User Three</span>
+                    </div>
+                  </td>
+                  <td class="py-3 px-5 text-gray-600">user3@email.com</td>
+                  <td class="py-3 px-5 text-gray-600">0988776655</td>
+                  <td class="py-3 px-5 text-gray-600">14 May 2025</td>
+                  <td class="py-3 px-5">
+                    <button type="button" class="btn btn-sm btn-outline-primary text-xs !border-purple-300 !text-purple-700 hover:!bg-purple-600 hover:!text-white font-semibold px-3 py-1 rounded" onclick="openUserModal('U003', 'User Three', 'user3@email.com', '0988776655', '14 May 2025', 'Active (Returned on time)', 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&w=150&q=80')">View</button>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td class="py-3 px-5 font-bold text-purple-700">U004</td>
+                  <td class="py-3 px-5">
+                    <div class="flex items-center gap-2.5">
+                      <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=80&q=80" alt="User Four" class="w-7 h-7 rounded-full object-cover">
+                      <span class="font-medium text-gray-800">User Four</span>
+                    </div>
+                  </td>
+                  <td class="py-3 px-5 text-gray-600">user4@email.com</td>
+                  <td class="py-3 px-5 text-gray-600">9001122334</td>
+                  <td class="py-3 px-5 text-gray-600">16 May 2025</td>
+                  <td class="py-3 px-5">
+                    <button type="button" class="btn btn-sm btn-outline-primary text-xs !border-purple-300 !text-purple-700 hover:!bg-purple-600 hover:!text-white font-semibold px-3 py-1 rounded" onclick="openUserModal('U004', 'User Four', 'user4@email.com', '9001122334', '16 May 2025', 'Active (New member)', 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=150&q=80')">View</button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <footer class="footer">© 2025 RentRax. All rights reserved.</footer>
+  </div>
+
+  <!-- User Details Modal with Tailwind & Bootstrap -->
+  <div class="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 hidden items-center justify-center p-4" id="userModal">
+    <div class="w-full max-w-sm bg-white rounded-2xl border border-purple-200 p-6 shadow-2xl relative">
+      <button class="absolute top-3 right-4 text-2xl text-gray-400 hover:text-gray-700" onclick="closeUserModal()">&times;</button>
+      <div class="flex items-center gap-3 mb-5">
+        <img id="modalAvatarImg" src="" alt="User Avatar" class="w-12 h-12 rounded-full object-cover border-2 border-purple-300 shadow">
+        <div>
+          <h3 class="text-lg font-bold text-[#33234E] m-0" id="modalUserName">User Name</h3>
+          <span class="text-xs font-bold text-purple-600" id="modalUserId">U001</span>
+        </div>
+      </div>
+      <div class="flex flex-col gap-2.5 text-sm text-gray-600">
+        <div class="flex justify-between border-b pb-1.5"><span>Email:</span><strong class="text-gray-900" id="modalUserEmail">user@email.com</strong></div>
+        <div class="flex justify-between border-b pb-1.5"><span>Phone:</span><strong class="text-gray-900" id="modalUserPhone">9876543210</strong></div>
+        <div class="flex justify-between border-b pb-1.5"><span>Joined:</span><strong class="text-gray-900" id="modalUserJoined">10 May 2025</strong></div>
+        <div class="flex justify-between pt-1"><span>Status:</span><strong class="text-emerald-700" id="modalUserStatus">Active</strong></div>
+      </div>
+      <div class="mt-5 text-right">
+        <button type="button" class="btn btn-sm bg-gray-100 hover:bg-gray-200 text-gray-700 font-semibold px-4 py-1.5 rounded-lg" onclick="closeUserModal()">Close</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    document.getElementById('userSearchInput').addEventListener('input', function() {
+      const q = this.value.toLowerCase().trim();
+      document.querySelectorAll('#usersTableBody tr').forEach(r => {
+        r.style.display = r.innerText.toLowerCase().includes(q) ? '' : 'none';
+      });
+    });
+
+    function openUserModal(id, name, email, phone, joined, status, avatarUrl) {
+      document.getElementById('modalAvatarImg').src = avatarUrl || 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=150&q=80';
+      document.getElementById('modalUserName').textContent = name;
+      document.getElementById('modalUserId').textContent = id;
+      document.getElementById('modalUserEmail').textContent = email;
+      document.getElementById('modalUserPhone').textContent = phone;
+      document.getElementById('modalUserJoined').textContent = joined;
+      document.getElementById('modalUserStatus').textContent = status;
+      const modal = document.getElementById('userModal');
+      modal.classList.remove('hidden');
+      modal.classList.add('flex');
+    }
+
+    function closeUserModal() {
+      const modal = document.getElementById('userModal');
+      modal.classList.add('hidden');
+      modal.classList.remove('flex');
+    }
+    document.getElementById('userModal').addEventListener('click', function(e) { if (e.target === this) closeUserModal(); });
+  </script>
+</body>
+</html>

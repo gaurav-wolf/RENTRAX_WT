@@ -1,0 +1,244 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Items for Rent | RentRax</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="../shared-shell.css">
+</head>
+<body>
+  <div class="frame">
+    <input class="toggle-hidden" type="checkbox" id="menu-toggle" aria-label="Toggle sidebar">
+    
+    <!-- Topbar Fig 1.6 -->
+    <header class="topbar flex items-center justify-between">
+      <div class="flex items-center gap-3">
+        <label class="menu" for="menu-toggle" aria-label="Toggle navigation"><span></span><span></span><span></span></label>
+        <a class="brand" href="dashboard.html">
+          <img src="../logo.png" alt="RentRax Logo">
+          <span>RentRax</span>
+        </a>
+      </div>
+      <div class="flex items-center">
+        <details class="user-menu">
+          <summary class="flex items-center gap-2">
+            <span class="avatar">
+              <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=100&q=80" alt="User Avatar">
+            </span>
+            <span class="user-name">User</span>
+            <span class="chevron">⌄</span>
+          </summary>
+          <div class="dropdown"><a href="login.html">Log out</a></div>
+        </details>
+      </div>
+    </header>
+
+    <div class="layout">
+      <!-- Sidebar -->
+      <aside class="sidebar">
+        <nav class="flex flex-col gap-1" aria-label="Main navigation">
+          <a class="nav-link" href="dashboard.html"><span class="nav-icon"><i class="bi bi-grid-1x2"></i></span>Dashboard</a>
+          <a class="nav-link" href="profile.html"><span class="nav-icon"><i class="bi bi-person"></i></span>Profile</a>
+          <a class="nav-link" href="order-history.html"><span class="nav-icon"><i class="bi bi-receipt"></i></span>Order History</a>
+          <a class="nav-link" href="order-history.html#rentals"><span class="nav-icon"><i class="bi bi-clock-history"></i></span>Rent History</a>
+          <a class="nav-link" href="rewards.html"><span class="nav-icon"><i class="bi bi-star"></i></span>Rewards &amp; Payments</a>
+          <a class="nav-link active" href="items.html"><span class="nav-icon"><i class="bi bi-box-seam"></i></span>Item List</a>
+          <a class="nav-link" href="../about/index.html"><span class="nav-icon"><i class="bi bi-info-circle"></i></span>About Us</a>
+          <a class="nav-link" href="login.html"><span class="nav-icon"><i class="bi bi-box-arrow-right"></i></span>Logout</a>
+        </nav>
+      </aside>
+
+      <!-- Main Content Fig 1.6 -->
+      <main class="p-4 md:p-6 min-w-0">
+        <div class="mb-5">
+          <span class="text-xs font-bold tracking-wider text-purple-700 uppercase">Browse rentals</span>
+          <h1 class="text-2xl font-bold text-[#33234E] m-0">Items for Rent</h1>
+          <p class="text-sm text-gray-500 m-0">Find the right thing for a project, trip, or everyday need.</p>
+        </div>
+
+        <!-- Filter & Search Toolbar Fig 1.6 -->
+        <section class="flex flex-wrap items-center justify-between gap-3 p-3 mb-5 border border-[#D6CBE7] rounded-xl bg-white/80 shadow-sm" aria-label="Filters and Search">
+          <div class="flex flex-wrap gap-2" id="categoryFilters">
+            <button type="button" class="px-3 py-1 rounded-full text-xs font-semibold bg-purple-600 text-white transition filter-btn" data-cat="all">All Items</button>
+            <button type="button" class="px-3 py-1 rounded-full text-xs font-semibold bg-white border border-purple-200 text-gray-700 hover:bg-purple-50 transition filter-btn" data-cat="Electronics">Electronics</button>
+            <button type="button" class="px-3 py-1 rounded-full text-xs font-semibold bg-white border border-purple-200 text-gray-700 hover:bg-purple-50 transition filter-btn" data-cat="Furniture">Furniture</button>
+            <button type="button" class="px-3 py-1 rounded-full text-xs font-semibold bg-white border border-purple-200 text-gray-700 hover:bg-purple-50 transition filter-btn" data-cat="Sports">Sports</button>
+            <button type="button" class="px-3 py-1 rounded-full text-xs font-semibold bg-white border border-purple-200 text-gray-700 hover:bg-purple-50 transition filter-btn" data-cat="Tools">Tools</button>
+          </div>
+          <div class="flex items-center gap-2 px-3 py-1.5 bg-white border border-gray-300 rounded-lg text-sm w-full sm:w-64">
+            <i class="bi bi-search text-gray-400"></i>
+            <input type="search" id="itemSearch" placeholder="Search items..." class="border-none outline-none text-gray-700 bg-transparent text-sm w-full">
+          </div>
+        </section>
+
+        <!-- Product Grid Fig 1.6 with Free Online Images -->
+        <section class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4" id="itemsGrid">
+          <article class="item-card bg-white/85 rounded-xl border border-[#D6CBE7] overflow-hidden shadow-sm hover:shadow-md transition" data-category="Electronics">
+            <img src="https://images.unsplash.com/photo-1516035069371-29a1b244cc32?auto=format&fit=crop&w=600&q=80" alt="DSLR Camera" class="w-full aspect-[16/10] object-cover border-b border-[#D6CBE7]">
+            <div class="p-3">
+              <span class="block text-[10px] font-bold tracking-wider text-purple-700 uppercase mb-1">Electronics</span>
+              <h2 class="text-sm font-bold text-gray-800 mb-2">DSLR Camera</h2>
+              <div class="flex items-center justify-between gap-2 mb-2">
+                <span class="text-sm font-bold text-purple-700">$18 <small class="text-[10px] text-gray-500 font-normal">/ day</small></span>
+                <a href="rent-request.html?item=DSLR+Camera&price=18&category=Electronics" class="btn btn-sm btn-outline-primary text-xs !border-purple-300 !text-purple-700 hover:!bg-purple-600 hover:!text-white font-semibold px-2.5 py-1 rounded">Rent Now</a>
+              </div>
+              <details class="text-xs">
+                <summary class="cursor-pointer py-1 px-2 text-center rounded border border-purple-200 text-purple-700 font-semibold hover:bg-purple-50 transition">View Details</summary>
+                <p class="mt-2 text-gray-600 leading-relaxed">Camera body with standard lens, charger, and carry case.</p>
+              </details>
+            </div>
+          </article>
+
+          <article class="item-card bg-white/85 rounded-xl border border-[#D6CBE7] overflow-hidden shadow-sm hover:shadow-md transition" data-category="Electronics">
+            <img src="https://images.unsplash.com/photo-1496181133206-80ce9b88a853?auto=format&fit=crop&w=600&q=80" alt="Laptop" class="w-full aspect-[16/10] object-cover border-b border-[#D6CBE7]">
+            <div class="p-3">
+              <span class="block text-[10px] font-bold tracking-wider text-purple-700 uppercase mb-1">Electronics</span>
+              <h2 class="text-sm font-bold text-gray-800 mb-2">Laptop</h2>
+              <div class="flex items-center justify-between gap-2 mb-2">
+                <span class="text-sm font-bold text-purple-700">$24 <small class="text-[10px] text-gray-500 font-normal">/ day</small></span>
+                <a href="rent-request.html?item=Laptop&price=24&category=Electronics" class="btn btn-sm btn-outline-primary text-xs !border-purple-300 !text-purple-700 hover:!bg-purple-600 hover:!text-white font-semibold px-2.5 py-1 rounded">Rent Now</a>
+              </div>
+              <details class="text-xs">
+                <summary class="cursor-pointer py-1 px-2 text-center rounded border border-purple-200 text-purple-700 font-semibold hover:bg-purple-50 transition">View Details</summary>
+                <p class="mt-2 text-gray-600 leading-relaxed">Portable laptop for work, classes, or travel. Includes charger.</p>
+              </details>
+            </div>
+          </article>
+
+          <article class="item-card bg-white/85 rounded-xl border border-[#D6CBE7] overflow-hidden shadow-sm hover:shadow-md transition" data-category="Electronics">
+            <img src="https://images.unsplash.com/photo-1517604931442-7e0c8ed2963c?auto=format&fit=crop&w=600&q=80" alt="Projector" class="w-full aspect-[16/10] object-cover border-b border-[#D6CBE7]">
+            <div class="p-3">
+              <span class="block text-[10px] font-bold tracking-wider text-purple-700 uppercase mb-1">Electronics</span>
+              <h2 class="text-sm font-bold text-gray-800 mb-2">Projector</h2>
+              <div class="flex items-center justify-between gap-2 mb-2">
+                <span class="text-sm font-bold text-purple-700">$22 <small class="text-[10px] text-gray-500 font-normal">/ day</small></span>
+                <a href="rent-request.html?item=Projector&price=22&category=Electronics" class="btn btn-sm btn-outline-primary text-xs !border-purple-300 !text-purple-700 hover:!bg-purple-600 hover:!text-white font-semibold px-2.5 py-1 rounded">Rent Now</a>
+              </div>
+              <details class="text-xs">
+                <summary class="cursor-pointer py-1 px-2 text-center rounded border border-purple-200 text-purple-700 font-semibold hover:bg-purple-50 transition">View Details</summary>
+                <p class="mt-2 text-gray-600 leading-relaxed">Portable projector for presentations and movie nights.</p>
+              </details>
+            </div>
+          </article>
+
+          <article class="item-card bg-white/85 rounded-xl border border-[#D6CBE7] overflow-hidden shadow-sm hover:shadow-md transition" data-category="Furniture">
+            <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?auto=format&fit=crop&w=600&q=80" alt="Accent Chair" class="w-full aspect-[16/10] object-cover border-b border-[#D6CBE7]">
+            <div class="p-3">
+              <span class="block text-[10px] font-bold tracking-wider text-purple-700 uppercase mb-1">Furniture</span>
+              <h2 class="text-sm font-bold text-gray-800 mb-2">Accent Chair</h2>
+              <div class="flex items-center justify-between gap-2 mb-2">
+                <span class="text-sm font-bold text-purple-700">$12 <small class="text-[10px] text-gray-500 font-normal">/ day</small></span>
+                <a href="rent-request.html?item=Accent+Chair&price=12&category=Furniture" class="btn btn-sm btn-outline-primary text-xs !border-purple-300 !text-purple-700 hover:!bg-purple-600 hover:!text-white font-semibold px-2.5 py-1 rounded">Rent Now</a>
+              </div>
+              <details class="text-xs">
+                <summary class="cursor-pointer py-1 px-2 text-center rounded border border-purple-200 text-purple-700 font-semibold hover:bg-purple-50 transition">View Details</summary>
+                <p class="mt-2 text-gray-600 leading-relaxed">Comfortable accent chair for temporary or event seating.</p>
+              </details>
+            </div>
+          </article>
+
+          <article class="item-card bg-white/85 rounded-xl border border-[#D6CBE7] overflow-hidden shadow-sm hover:shadow-md transition" data-category="Sports">
+            <img src="https://images.unsplash.com/photo-1485965120184-e220f721d03e?auto=format&fit=crop&w=600&q=80" alt="City Bike" class="w-full aspect-[16/10] object-cover border-b border-[#D6CBE7]">
+            <div class="p-3">
+              <span class="block text-[10px] font-bold tracking-wider text-purple-700 uppercase mb-1">Sports</span>
+              <h2 class="text-sm font-bold text-gray-800 mb-2">City Bike</h2>
+              <div class="flex items-center justify-between gap-2 mb-2">
+                <span class="text-sm font-bold text-purple-700">$15 <small class="text-[10px] text-gray-500 font-normal">/ day</small></span>
+                <a href="rent-request.html?item=City+Bike&price=15&category=Sports" class="btn btn-sm btn-outline-primary text-xs !border-purple-300 !text-purple-700 hover:!bg-purple-600 hover:!text-white font-semibold px-2.5 py-1 rounded">Rent Now</a>
+              </div>
+              <details class="text-xs">
+                <summary class="cursor-pointer py-1 px-2 text-center rounded border border-purple-200 text-purple-700 font-semibold hover:bg-purple-50 transition">View Details</summary>
+                <p class="mt-2 text-gray-600 leading-relaxed">City bicycle with helmet and lock included in the rental.</p>
+              </details>
+            </div>
+          </article>
+
+          <article class="item-card bg-white/85 rounded-xl border border-[#D6CBE7] overflow-hidden shadow-sm hover:shadow-md transition" data-category="Sports">
+            <img src="https://images.unsplash.com/photo-1584735935682-2f2b69dff9d2?auto=format&fit=crop&w=600&q=80" alt="Dumbbell Set" class="w-full aspect-[16/10] object-cover border-b border-[#D6CBE7]">
+            <div class="p-3">
+              <span class="block text-[10px] font-bold tracking-wider text-purple-700 uppercase mb-1">Sports</span>
+              <h2 class="text-sm font-bold text-gray-800 mb-2">Dumbbell Set</h2>
+              <div class="flex items-center justify-between gap-2 mb-2">
+                <span class="text-sm font-bold text-purple-700">$8 <small class="text-[10px] text-gray-500 font-normal">/ day</small></span>
+                <a href="rent-request.html?item=Dumbbell+Set&price=8&category=Sports" class="btn btn-sm btn-outline-primary text-xs !border-purple-300 !text-purple-700 hover:!bg-purple-600 hover:!text-white font-semibold px-2.5 py-1 rounded">Rent Now</a>
+              </div>
+              <details class="text-xs">
+                <summary class="cursor-pointer py-1 px-2 text-center rounded border border-purple-200 text-purple-700 font-semibold hover:bg-purple-50 transition">View Details</summary>
+                <p class="mt-2 text-gray-600 leading-relaxed">Adjustable weights for home workout or short training plan.</p>
+              </details>
+            </div>
+          </article>
+
+          <article class="item-card bg-white/85 rounded-xl border border-[#D6CBE7] overflow-hidden shadow-sm hover:shadow-md transition" data-category="Tools">
+            <img src="https://images.unsplash.com/photo-1504148455328-c376907d081c?auto=format&fit=crop&w=600&q=80" alt="Power Drill" class="w-full aspect-[16/10] object-cover border-b border-[#D6CBE7]">
+            <div class="p-3">
+              <span class="block text-[10px] font-bold tracking-wider text-purple-700 uppercase mb-1">Tools</span>
+              <h2 class="text-sm font-bold text-gray-800 mb-2">Power Drill</h2>
+              <div class="flex items-center justify-between gap-2 mb-2">
+                <span class="text-sm font-bold text-purple-700">$10 <small class="text-[10px] text-gray-500 font-normal">/ day</small></span>
+                <a href="rent-request.html?item=Power+Drill&price=10&category=Tools" class="btn btn-sm btn-outline-primary text-xs !border-purple-300 !text-purple-700 hover:!bg-purple-600 hover:!text-white font-semibold px-2.5 py-1 rounded">Rent Now</a>
+              </div>
+              <details class="text-xs">
+                <summary class="cursor-pointer py-1 px-2 text-center rounded border border-purple-200 text-purple-700 font-semibold hover:bg-purple-50 transition">View Details</summary>
+                <p class="mt-2 text-gray-600 leading-relaxed">Cordless drill set with battery, charger, and bits.</p>
+              </details>
+            </div>
+          </article>
+
+          <article class="item-card bg-white/85 rounded-xl border border-[#D6CBE7] overflow-hidden shadow-sm hover:shadow-md transition" data-category="Furniture">
+            <img src="https://images.unsplash.com/photo-1507473885765-e6ed057f782c?auto=format&fit=crop&w=600&q=80" alt="Table Lamp" class="w-full aspect-[16/10] object-cover border-b border-[#D6CBE7]">
+            <div class="p-3">
+              <span class="block text-[10px] font-bold tracking-wider text-purple-700 uppercase mb-1">Furniture</span>
+              <h2 class="text-sm font-bold text-gray-800 mb-2">Table Lamp</h2>
+              <div class="flex items-center justify-between gap-2 mb-2">
+                <span class="text-sm font-bold text-purple-700">$6 <small class="text-[10px] text-gray-500 font-normal">/ day</small></span>
+                <a href="rent-request.html?item=Table+Lamp&price=6&category=Furniture" class="btn btn-sm btn-outline-primary text-xs !border-purple-300 !text-purple-700 hover:!bg-purple-600 hover:!text-white font-semibold px-2.5 py-1 rounded">Rent Now</a>
+              </div>
+              <details class="text-xs">
+                <summary class="cursor-pointer py-1 px-2 text-center rounded border border-purple-200 text-purple-700 font-semibold hover:bg-purple-50 transition">View Details</summary>
+                <p class="mt-2 text-gray-600 leading-relaxed">Warm light for desk, guest room, or event setup.</p>
+              </details>
+            </div>
+          </article>
+        </section>
+      </main>
+    </div>
+
+    <footer class="footer">© 2025 RentRax. All rights reserved.</footer>
+  </div>
+
+  <script>
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    const items = document.querySelectorAll('.item-card');
+    const searchInput = document.getElementById('itemSearch');
+    let currentCat = 'all';
+
+    function applyFilter() {
+      const q = searchInput.value.toLowerCase().trim();
+      items.forEach(card => {
+        const cat = card.getAttribute('data-category');
+        const text = card.innerText.toLowerCase();
+        const matchesCat = currentCat === 'all' || cat === currentCat;
+        const matchesSearch = text.includes(q);
+        card.style.display = matchesCat && matchesSearch ? '' : 'none';
+      });
+    }
+
+    filterBtns.forEach(btn => {
+      btn.addEventListener('click', function() {
+        filterBtns.forEach(b => {
+          b.className = 'px-3 py-1 rounded-full text-xs font-semibold bg-white border border-purple-200 text-gray-700 hover:bg-purple-50 transition filter-btn';
+        });
+        this.className = 'px-3 py-1 rounded-full text-xs font-semibold bg-purple-600 text-white transition filter-btn';
+        currentCat = this.getAttribute('data-cat');
+        applyFilter();
+      });
+    });
+
+    searchInput.addEventListener('input', applyFilter);
+  </script>
+</body>
+</html>

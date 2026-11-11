@@ -1,0 +1,74 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>RentRax - Admin Login</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="../shared-shell.css">
+</head>
+<body class="flex items-center justify-center min-h-screen p-4">
+
+  <main class="w-full max-w-sm border-2 border-purple-600 rounded-2xl bg-white/75 backdrop-blur-md shadow-2xl p-8 flex flex-col items-center my-auto">
+    <!-- Admin Illustration Image Fig 2.1 with Company Logo -->
+    <img src="../logo.png" alt="RentRax Logo" class="w-28 h-28 rounded-full mb-4 shadow-xl object-cover border-4 border-purple-200 bg-white">
+    <h1 class="text-base font-bold text-purple-700 tracking-wider uppercase mb-5 m-0" id="login-title">ADMIN LOGIN</h1>
+
+    <form id="adminLoginForm" class="w-full flex flex-col gap-3.5" action="dashboard.html" method="get" novalidate>
+      <div class="relative">
+        <i class="bi bi-person absolute left-3.5 top-1/2 -translate-y-1/2 text-gray-400 text-lg"></i>
+        <input type="text" id="adminUsername" class="w-full h-11 pl-10 pr-3 rounded-lg border border-gray-300 text-sm focus:border-purple-600 focus:ring-2 focus:ring-purple-200 outline-none transition" placeholder="Username" aria-label="Username" autocomplete="username" value="admin" required>
+      </div>
+
+      <div class="relative">
+        <i class="bi bi-shield-lock absolute left-3.5 top-1/2 -translate-y-1/2 text-gray-400 text-lg"></i>
+        <input type="password" id="adminPassword" class="w-full h-11 pl-10 pr-3 rounded-lg border border-gray-300 text-sm focus:border-purple-600 focus:ring-2 focus:ring-purple-200 outline-none transition" placeholder="Password" aria-label="Password" autocomplete="current-password" value="admin123" required>
+      </div>
+
+      <button class="btn w-full h-11 bg-purple-600 hover:bg-purple-700 text-white font-semibold rounded-lg shadow transition mt-1" type="submit">Login</button>
+      
+      <div class="text-center text-xs mt-3">
+        <a href="../client/login.html" class="text-purple-700 font-semibold hover:underline">Switch to User Login &rarr;</a>
+      </div>
+      <div class="text-center text-xs mt-2">
+        <a href="../about/index.html" class="text-gray-500 hover:underline">About RentRax &rarr;</a>
+      </div>
+    </form>
+  </main>
+
+  <script>
+    function validateAdminLogin(event) {
+      event.preventDefault();
+
+      const usernameInput = document.getElementById('adminUsername');
+      const passwordInput = document.getElementById('adminPassword');
+      const username = usernameInput.value.trim();
+      const password = passwordInput.value;
+
+      if (!username) {
+        alert('Please enter the admin username.');
+        usernameInput.focus();
+        return;
+      }
+      if (!password) {
+        alert('Please enter the admin password.');
+        passwordInput.focus();
+        return;
+      }
+      if (username !== 'admin' || password !== 'admin123') {
+        alert('Invalid admin username or password.');
+        return;
+      }
+
+      alert('Admin login successful.');
+      window.location.href = 'dashboard.html';
+    }
+
+    document
+      .getElementById('adminLoginForm')
+      .addEventListener('submit', validateAdminLogin);
+  </script>
+</body>
+</html>

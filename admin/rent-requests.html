@@ -1,0 +1,202 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Rent Item Requests | RentRax Admin</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="../shared-shell.css">
+</head>
+<body>
+  <div class="frame">
+    <input class="toggle-hidden" type="checkbox" id="menu-toggle" aria-label="Toggle sidebar">
+    
+    <!-- Topbar Fig 2.4 -->
+    <header class="topbar flex items-center justify-between">
+      <div class="flex items-center gap-3">
+        <label class="menu" for="menu-toggle" aria-label="Toggle navigation"><span></span><span></span><span></span></label>
+        <a class="brand" href="dashboard.html">
+          <img src="../logo.png" alt="RentRax Logo">
+          <span>RentRax - Admin</span>
+        </a>
+      </div>
+      <div class="flex items-center">
+        <details class="user-menu">
+          <summary class="flex items-center gap-2">
+            <span class="avatar">
+              <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=100&q=80" alt="Admin Avatar">
+            </span>
+            <span class="user-name">Admin</span>
+            <span class="chevron">⌄</span>
+          </summary>
+          <div class="dropdown"><a href="login.html">Log out</a></div>
+        </details>
+      </div>
+    </header>
+
+    <div class="layout">
+      <!-- Admin Sidebar Fig 2.4 -->
+      <aside class="sidebar">
+        <nav class="flex flex-col gap-1" aria-label="Admin navigation">
+          <a class="nav-link" href="dashboard.html">
+            <span class="nav-icon"><i class="bi bi-grid-1x2"></i></span>Dashboard
+          </a>
+          <a class="nav-link" href="daily-records.html">
+            <span class="nav-icon"><i class="bi bi-calendar-check"></i></span>Daily Records
+          </a>
+          <a class="nav-link active" href="rent-requests.html">
+            <span class="nav-icon"><i class="bi bi-inbox"></i></span>Rent Requests
+          </a>
+          <a class="nav-link" href="users-list.html">
+            <span class="nav-icon"><i class="bi bi-people"></i></span>Users List
+          </a>
+          <a class="nav-link" href="login.html">
+            <span class="nav-icon"><i class="bi bi-box-arrow-right"></i></span>Logout
+          </a>
+        </nav>
+      </aside>
+
+      <!-- Main Content Fig 2.4 -->
+      <main class="p-4 md:p-6 min-w-0">
+        <div class="mb-5">
+          <h1 class="text-2xl font-bold text-[#33234E] m-0">Rent Item Requests</h1>
+        </div>
+
+        <section class="rounded-xl border border-[#D6CBE7] bg-white/85 shadow-sm overflow-hidden" aria-label="Rent Item Requests Table">
+          <div class="overflow-x-auto">
+            <table class="table table-hover align-middle m-0 text-sm">
+              <thead class="bg-purple-50 text-xs text-purple-900 uppercase tracking-wider">
+                <tr>
+                  <th class="py-3 px-5">Request ID</th>
+                  <th class="py-3 px-5">Item</th>
+                  <th class="py-3 px-5">User</th>
+                  <th class="py-3 px-5">From</th>
+                  <th class="py-3 px-5">To</th>
+                  <th class="py-3 px-5">Status</th>
+                  <th class="py-3 px-5">Action</th>
+                </tr>
+              </thead>
+              <tbody class="divide-y divide-purple-50" id="requestsTableBody">
+                <tr data-req="#REQ101" data-item="DSLR Camera" data-user="User1">
+                  <td class="py-3 px-5 font-bold text-purple-700">#REQ101</td>
+                  <td class="py-3 px-5">DSLR Camera</td>
+                  <td class="py-3 px-5">User1</td>
+                  <td class="py-3 px-5">20 May</td>
+                  <td class="py-3 px-5">25 May</td>
+                  <td class="py-3 px-5"><span class="badge bg-amber-100 text-amber-800 font-semibold px-2.5 py-1 rounded-full text-xs">Pending</span></td>
+                  <td class="py-3 px-5">
+                    <div class="flex gap-1.5">
+                      <button type="button" class="btn btn-sm bg-emerald-600 hover:bg-emerald-700 text-white font-semibold px-2.5 py-1 rounded text-xs" onclick="handleAction(this, 'Approved')">Approve</button>
+                      <button type="button" class="btn btn-sm bg-rose-600 hover:bg-rose-700 text-white font-semibold px-2.5 py-1 rounded text-xs" onclick="handleAction(this, 'Rejected')">Reject</button>
+                    </div>
+                  </td>
+                </tr>
+
+                <tr data-req="#REQ102" data-item="Tent" data-user="User2">
+                  <td class="py-3 px-5 font-bold text-purple-700">#REQ102</td>
+                  <td class="py-3 px-5">Tent</td>
+                  <td class="py-3 px-5">User2</td>
+                  <td class="py-3 px-5">21 May</td>
+                  <td class="py-3 px-5">26 May</td>
+                  <td class="py-3 px-5"><span class="badge bg-amber-100 text-amber-800 font-semibold px-2.5 py-1 rounded-full text-xs">Pending</span></td>
+                  <td class="py-3 px-5">
+                    <div class="flex gap-1.5">
+                      <button type="button" class="btn btn-sm bg-emerald-600 hover:bg-emerald-700 text-white font-semibold px-2.5 py-1 rounded text-xs" onclick="handleAction(this, 'Approved')">Approve</button>
+                      <button type="button" class="btn btn-sm bg-rose-600 hover:bg-rose-700 text-white font-semibold px-2.5 py-1 rounded text-xs" onclick="handleAction(this, 'Rejected')">Reject</button>
+                    </div>
+                  </td>
+                </tr>
+
+                <tr data-req="#REQ103" data-item="Laptop" data-user="User3">
+                  <td class="py-3 px-5 font-bold text-purple-700">#REQ103</td>
+                  <td class="py-3 px-5">Laptop</td>
+                  <td class="py-3 px-5">User3</td>
+                  <td class="py-3 px-5">21 May</td>
+                  <td class="py-3 px-5">27 May</td>
+                  <td class="py-3 px-5"><span class="badge bg-emerald-100 text-emerald-800 font-semibold px-2.5 py-1 rounded-full text-xs">Approved</span></td>
+                  <td class="py-3 px-5">
+                    <button type="button" class="btn btn-sm btn-outline-primary text-xs !border-purple-300 !text-purple-700 hover:!bg-purple-600 hover:!text-white font-semibold px-3 py-1 rounded" onclick="viewDetails('#REQ103', 'Laptop', 'User3', '21 May', '27 May', 'Approved')">View</button>
+                  </td>
+                </tr>
+
+                <tr data-req="#REQ104" data-item="Projector" data-user="User4">
+                  <td class="py-3 px-5 font-bold text-purple-700">#REQ104</td>
+                  <td class="py-3 px-5">Projector</td>
+                  <td class="py-3 px-5">User4</td>
+                  <td class="py-3 px-5">22 May</td>
+                  <td class="py-3 px-5">28 May</td>
+                  <td class="py-3 px-5"><span class="badge bg-amber-100 text-amber-800 font-semibold px-2.5 py-1 rounded-full text-xs">Pending</span></td>
+                  <td class="py-3 px-5">
+                    <div class="flex gap-1.5">
+                      <button type="button" class="btn btn-sm bg-emerald-600 hover:bg-emerald-700 text-white font-semibold px-2.5 py-1 rounded text-xs" onclick="handleAction(this, 'Approved')">Approve</button>
+                      <button type="button" class="btn btn-sm bg-rose-600 hover:bg-rose-700 text-white font-semibold px-2.5 py-1 rounded text-xs" onclick="handleAction(this, 'Rejected')">Reject</button>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <footer class="footer">© 2025 RentRax. All rights reserved.</footer>
+  </div>
+
+  <!-- Details Modal with Tailwind & Bootstrap -->
+  <div class="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 hidden items-center justify-center p-4" id="detailModal">
+    <div class="w-full max-w-sm bg-white rounded-2xl border border-purple-200 p-6 shadow-2xl relative">
+      <button class="absolute top-3 right-4 text-2xl text-gray-400 hover:text-gray-700" onclick="closeModal()">&times;</button>
+      <h3 class="text-xl font-bold text-[#33234E] mb-4">Request Details</h3>
+      <div id="modalContent" class="flex flex-col gap-2.5 text-sm text-gray-600"></div>
+      <div class="mt-5 text-right">
+        <button type="button" class="btn btn-sm bg-gray-100 hover:bg-gray-200 text-gray-700 font-semibold px-4 py-1.5 rounded-lg" onclick="closeModal()">Close</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function handleAction(btn, status) {
+      const row = btn.closest('tr');
+      const badge = row.cells[5].querySelector('.badge');
+      const cell = row.cells[6];
+      const reqId = row.getAttribute('data-req');
+      const item = row.getAttribute('data-item');
+      const user = row.getAttribute('data-user');
+      const from = row.cells[3].innerText;
+      const to = row.cells[4].innerText;
+
+      if (status === 'Approved') {
+        badge.className = 'badge bg-emerald-100 text-emerald-800 font-semibold px-2.5 py-1 rounded-full text-xs';
+        badge.textContent = 'Approved';
+      } else {
+        badge.className = 'badge bg-rose-100 text-rose-800 font-semibold px-2.5 py-1 rounded-full text-xs';
+        badge.textContent = 'Rejected';
+      }
+      cell.innerHTML = `<button type="button" class="btn btn-sm btn-outline-primary text-xs !border-purple-300 !text-purple-700 hover:!bg-purple-600 hover:!text-white font-semibold px-3 py-1 rounded" onclick="viewDetails('${reqId}', '${item}', '${user}', '${from}', '${to}', '${status}')">View</button>`;
+    }
+
+    function viewDetails(reqId, item, user, from, to, status) {
+      const modal = document.getElementById('detailModal');
+      document.getElementById('modalContent').innerHTML = `
+        <div class="flex justify-between border-b pb-1.5"><span>Request ID:</span><strong class="text-purple-700">${reqId}</strong></div>
+        <div class="flex justify-between border-b pb-1.5"><span>Item:</span><strong class="text-gray-900">${item}</strong></div>
+        <div class="flex justify-between border-b pb-1.5"><span>User:</span><strong class="text-gray-900">${user}</strong></div>
+        <div class="flex justify-between border-b pb-1.5"><span>Period:</span><strong class="text-gray-900">${from} to ${to}</strong></div>
+        <div class="flex justify-between pt-1"><span>Status:</span><strong class="${status === 'Approved' ? 'text-emerald-700' : 'text-rose-700'}">${status}</strong></div>
+      `;
+      modal.classList.remove('hidden');
+      modal.classList.add('flex');
+    }
+
+    function closeModal() {
+      const modal = document.getElementById('detailModal');
+      modal.classList.add('hidden');
+      modal.classList.remove('flex');
+    }
+    document.getElementById('detailModal').addEventListener('click', function(e) { if (e.target === this) closeModal(); });
+  </script>
+</body>
+</html>
